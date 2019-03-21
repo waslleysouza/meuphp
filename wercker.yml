@@ -1,5 +1,5 @@
 build: 
-  box: meuphp
+  box: php:7.2-apache
   steps:    
     
     - internal/docker-build:
@@ -19,7 +19,7 @@ build:
             registry: https://iad.ocir.io/v2
             
 deploy-to-kubernetes:
-    box: meuphp
+    box: php:7.2-apache
     steps:
 
     # https://github.com/wercker/step-bash-template
