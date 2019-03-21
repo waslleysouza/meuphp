@@ -1,6 +1,6 @@
 build:
-  steps:
-    box: php
+  box: php  
+  steps:    
     
     - internal/docker-build:
             dockerfile: Dockerfile
