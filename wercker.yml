@@ -9,10 +9,10 @@ build:
     - internal/docker-push:
             image-name: meuphp
             entrypoint: /var/www/html/
-            cmd: 0.0.0.0 8081
+            cmd: 0.0.0.0 8080
             working-dir: $WERCKER_ROOT
             tag: $WERCKER_GIT_COMMIT
-            ports: "8081"
+            ports: "8080"
             username: $DOCKER_USERNAME
             password: $DOCKER_PASSWORD
             repository: $DOCKER_REPO
