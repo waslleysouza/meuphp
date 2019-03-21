@@ -1,0 +1,18 @@
+build:
+  steps:
+    box: php
+    
+    - internal/docker-build:
+            dockerfile: Dockerfile
+            image-name: meuphp
+  
+    - internal/docker-push:
+            entrypoint: bin/get_ip
+            cmd: 0.0.0.0 8081
+            working-dir: $WERCKER_ROOT
+            tag: $WERCKER_GIT_COMMIT
+            ports: "8081"
+            username: $DOCKER_USERNAME
+            password: $DOCKER_PASSWORD
+            repository: $DOCKER_REPO
+            registry: https://iad.ocir.io/v2
