@@ -1,2 +1,2 @@
 from php:7.2-apache
-copy src/ var/www/html/
+copy src/ /var/www/html/
