@@ -8,6 +8,7 @@ build:
   
     - internal/docker-push:
             image-name: meuphp
+            entrypoint: /var/www/html/
             cmd: 0.0.0.0 8081
             working-dir: $WERCKER_ROOT
             tag: $WERCKER_GIT_COMMIT
