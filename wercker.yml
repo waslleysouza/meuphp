@@ -1,4 +1,5 @@
 build: 
+  box: meuphp
   steps:    
     
     - internal/docker-build:
