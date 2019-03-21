@@ -5,7 +5,11 @@ build:
     - internal/docker-build:
             dockerfile: Dockerfile
             image-name: meuphp
-  
+            
+    - internal/docker-run:
+            image: meuphp
+            name: meuphp
+            
     - internal/docker-push:
             image-name: meuphp
             cmd: 0.0.0.0 8080
@@ -16,10 +20,6 @@ build:
             password: $DOCKER_PASSWORD
             repository: $DOCKER_REPO
             registry: https://iad.ocir.io/v2
-            
-    - internal/docker-run:
-            image: meuphp
-            name: meuphp
             
 deploy-to-kubernetes:
     box: php:7.2-apache
