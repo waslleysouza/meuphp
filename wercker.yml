@@ -17,6 +17,10 @@ build:
             repository: $DOCKER_REPO
             registry: https://iad.ocir.io/v2
             
+    - internal/docker-run:
+            image: meuphp
+            name: meuphp
+            
 deploy-to-kubernetes:
     box: php:7.2-apache
     steps:
