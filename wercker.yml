@@ -1,5 +1,4 @@
-build:
-  box: php  
+build: 
   steps:    
     
     - internal/docker-build:
@@ -8,7 +7,7 @@ build:
   
     - internal/docker-push:
             image-name: meuphp
-            entrypoint: src/index.php
+            entrypoint: /var/www/html/
             cmd: 0.0.0.0 8080
             working-dir: $WERCKER_ROOT
             tag: $WERCKER_GIT_COMMIT
@@ -19,7 +18,7 @@ build:
             registry: https://iad.ocir.io/v2
             
 deploy-to-kubernetes:
-    box: php
+    box: meuphp
     steps:
 
     # https://github.com/wercker/step-bash-template
