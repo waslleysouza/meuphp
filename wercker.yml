@@ -1,5 +1,7 @@
+
+box: php:7.2-apache
+
 build: 
-  box: php:7.2-apache
   steps:    
     
     - internal/docker-build:
@@ -8,7 +10,6 @@ build:
             
     - internal/docker-push:
             image-name: meuphp
-            entrypoint: meuphp
             tag: $WERCKER_GIT_COMMIT
             username: $DOCKER_USERNAME
             password: $DOCKER_PASSWORD
@@ -16,7 +17,6 @@ build:
             registry: https://iad.ocir.io/v2
             
 deploy-to-kubernetes:
-    box: php:7.2-apache
     steps:
 
     # https://github.com/wercker/step-bash-template
@@ -32,6 +32,7 @@ deploy-to-kubernetes:
         code: |
           mkdir $WERCKER_OUTPUT_DIR/kubernetes
           mv kubernetes_*.yml $WERCKER_OUTPUT_DIR/kubernetes
+          
     # `apply` is a good command to use here, as it'll create Kubernetes entities if they are missing.
     - kubectl:
         name: deploy to kubernetes
