@@ -3,19 +3,24 @@
 box: php:7.2-apache
 
 build: 
-  steps:    
+    services:
+        - id: mysql
+            env: 
+                MYSQL_ROOT_PASSWORD: password
+        
+    steps:    
     
-    - internal/docker-build:
-        dockerfile: Dockerfile
-        image-name: meuphp
+        - internal/docker-build:
+            dockerfile: Dockerfile
+            image-name: meuphp
             
-    - internal/docker-push:
-        image-name: meuphp
-        tag: $WERCKER_GIT_COMMIT
-        username: $DOCKER_USERNAME
-        password: $DOCKER_PASSWORD
-        repository: $DOCKER_REPO
-        registry: https://iad.ocir.io/v2
+        - internal/docker-push:
+            image-name: meuphp
+            tag: $WERCKER_GIT_COMMIT
+            username: $DOCKER_USERNAME
+            password: $DOCKER_PASSWORD
+            repository: $DOCKER_REPO
+            registry: https://iad.ocir.io/v2
             
 deploy-to-kubernetes:
     steps:
