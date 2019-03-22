@@ -22,7 +22,7 @@ spec:
       containers:
       - name: meuphp-server
         image: ${DOCKER_REPO}:${WERCKER_GIT_COMMIT}
-		volumeMounts:
+        volumeMounts:
         - name: meuphp-storage
           mountPath: /data/meuphp
         ports:
@@ -31,4 +31,7 @@ spec:
           protocol: TCP
       imagePullSecrets:
       - name:  ${OKE_IMAGESECRET}
+      volumes:
+      - name: meuphp-storage
+        emptyDir: {}
 
