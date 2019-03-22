@@ -11,7 +11,6 @@ build:
             
     - internal/docker-push:
         image-name: meuphp
-        ports: "81"
         tag: $WERCKER_GIT_COMMIT
         username: $DOCKER_USERNAME
         password: $DOCKER_PASSWORD
