@@ -33,5 +33,5 @@ spec:
       - name:  ${OKE_IMAGESECRET}
       volumes:
       - name: meuphp-storage
-        emptyDir: {}
+        emptyDir: {} 
 
