@@ -1,8 +1,6 @@
 
-box:
-    id: php:7.2-apache
-    ports:
-        - "81"
+
+box: php:7.2-apache
 
 build: 
   steps:    
@@ -13,6 +11,7 @@ build:
             
     - internal/docker-push:
         image-name: meuphp
+        ports: "81"
         tag: $WERCKER_GIT_COMMIT
         username: $DOCKER_USERNAME
         password: $DOCKER_PASSWORD
