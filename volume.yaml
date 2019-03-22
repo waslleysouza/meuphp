@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: meuphpS
+spec:
+  containers:
+  - name: meuphp
+    image: meuphp
+    volumeMounts:
+    - name: meuphp-storage
+      mountPath: /data/meuphp
+  volumes:
+  - name: meuphp-storage
+    emptyDir: {}
