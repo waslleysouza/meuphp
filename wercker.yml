@@ -4,9 +4,9 @@ box: php:7.2-apache
 
 build: 
     services:
-        - id: mysql
-            env: 
-                MYSQL_ROOT_PASSWORD: password
+       - id: mysql
+         env:
+            MYSQL_ROOT_PASSWORD: password
         
     steps:    
     
