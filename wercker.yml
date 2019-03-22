@@ -1,5 +1,8 @@
 
-box: php:7.2-apache
+box:
+    id: php:7.2-apache
+    ports:
+        - "81"
 
 build: 
   steps:    
