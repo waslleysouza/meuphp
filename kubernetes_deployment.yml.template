@@ -24,7 +24,7 @@ spec:
         image: ${DOCKER_REPO}:${WERCKER_GIT_COMMIT}
 		volumeMounts:
         - name: meuphp-storage
-      mountPath: /data/meuphp
+          mountPath: /data/meuphp
         ports:
         - name: meuphp-server
           containerPort: 80
