@@ -11,8 +11,8 @@ metadata:
     commit: ${WERCKER_GIT_COMMIT}
 spec:
   ports:
-  - port: 80
-    targetPort: 80
+  - port: 81
+    targetPort: 81
   selector:
     app: meuphp
     commit: ${WERCKER_GIT_COMMIT}

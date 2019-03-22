@@ -24,7 +24,7 @@ spec:
         image: ${DOCKER_REPO}:${WERCKER_GIT_COMMIT}
         ports:
         - name: meuphp-server
-          containerPort: 80
+          containerPort: 81
           protocol: TCP
       imagePullSecrets:
       - name:  ${OKE_IMAGESECRET}
