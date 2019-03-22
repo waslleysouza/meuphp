@@ -1,13 +1,12 @@
 
 
 box: php:7.2-apache
+services:
+    - id: mysql
+      env:
+         MYSQL_ROOT_PASSWORD: password
 
-build: 
-    services:
-       - id: mysql
-         env:
-            MYSQL_ROOT_PASSWORD: password
-        
+build:
     steps:    
     
         - internal/docker-build:
